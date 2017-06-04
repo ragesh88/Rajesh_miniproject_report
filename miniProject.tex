@@ -24,6 +24,7 @@
 \usepackage[normalem]{ulem}
 \newcommand{\subfigureautorefname}{\figureautorefname}
 \usepackage{chemarr}
+\usepackage{listings}
 \definecolor{Gray}{gray}{0.85}
 \newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR} % new date format
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
@@ -81,7 +82,54 @@
 
 \addtocontents{loa}{\def\string\figurename{Algorithm}} % list of algorithms
 
+%%%%%%%%% Javascript for listing %%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
 
+\lstset{
+	language=JavaScript,
+	backgroundcolor=\color{white},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=2,
+	breaklines=true,
+	showtabs=false,
+	captionpos=b
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%% Jason for listing %%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{json}{
+	basicstyle=\normalfont\ttfamily,
+	numbers=left,
+	numberstyle=\scriptsize,
+	stepnumber=1,
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+%	frame=lines,
+	backgroundcolor=\color{white},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% GRAPHICS PATH
 %\graphicspath{{E:/DissertationProspectus/figures/}}
@@ -225,10 +273,7 @@
 
 \section{OVERVIEW}
 \label{sec:OVERVIEW}
-The ‘Voice Enabled browser’ consists of three main parts: Speech Engine, the Java application and the Interface. The relationships between the modules can be seen in the following simplified class diagram. The GUI is the part of Interface module of the project.  The speech recognizer will listen to what you say and convert your words to a string.
-A voice browsing extension is a software application that presents an interactive voice user interface to the user in a manner analogous to the functioning of a web browser interpreting Hypertext Markup Language (HTML). Dialog documents interpreted by browser are often encoded in standards-based markup languages, such as Voice Dialog Extensible Markup Language (VoiceXML), a standard by the World Wide Web Consortium.
-A voice browser presents information aurally, using pre-recorded audio file playback or text-to-speech synthesis software. A voice browser obtains information using speech recognition and keypad entry, such as DTMF detection.
-As speech recognition and web technologies have matured, voice applications are deployed commercially in many industries and voice browsers are supplanting traditional proprietary interactive voice response (IVR) systems. Voice browser software is delivered in a variety of implementations models.
+The 'Voice Enabled browser' consists of three main parts: Speech Engine , the Java application and the Interface. The relationships between the modules can be seen in the following simplified class diagram. The GUI is the part of Interface module of the project.  The speech recognizer will listen to what you say and convert your words to a string. A voice browsing extension is a software application that presents an interactive voice user interface to the user in a manner analogous to the functioning of a web browser interpreting Hypertext Markup Language (HTML). Dialog documents interpreted by browser are often encoded in standards-based markup languages, such as Voice Dialog Extensible Markup Language (VoiceXML), a standard by the World Wide Web Consortium. A voice browser presents information aurally, using pre-recorded audio file playback or text-to-speech synthesis software. A voice browser obtains information using speech recognition \cite{Ornbospeech,Walshspeech,speechStackoverflow} and keypad entry, such as DTMF detection. As speech recognition and web technologies have matured, voice applications are deployed commercially in many industries and voice browsers are supplanting traditional proprietary interactive voice response (IVR) systems. Voice browser software is delivered in a variety of implementations models.
 
 
 \section{PROBLEM ANALYSIS}
@@ -242,11 +287,11 @@ Problem analysis is the process of understanding the actual problems, user needs
 
 \subsection{KEYBOARD}
 \label{subsec:KEYBOARD} 
-In normal usage, the keyboard is used as a text entry interface to type text and numbers into a word processor, text editor or other programs. In a modern computer, the interpretation of key presses is generally left to the software. A computer keyboard distinguishes each physical key from every other and reports all key presses to the controlling software. Keyboards are also used for computer gaming, either with regular keyboards or by using keyboards with special gaming features, which can expedite frequently used keystroke combinations.
+In normal usage, the keyboard is used as a text entry interface to type text and numbers into a word processor, text editor or other programs. In a modern computer, the interpretation of key presses is generally left to the software. A computer keyboard distinguishes each physical key from every other and reports all key presses to the controlling software. Keyboards are also used for computer gaming, either with regular keyboards or by using keyboards with special gaming features, which can expedite frequently used keystroke combinations.
 
 \subsection{MOUSE}
 \label{subsec:MOUSE}
-A computer mouse is a pointing device (hand control) that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface.
+A computer mouse is a pointing device (hand control) that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface.
 Physically, a mouse consists of an object held in one's hand, with one or more buttons. Mice often also feature other elements, such as touch surfaces and "wheels", which enable additional control and dimensional input.
 
 \section{PROPOSED SYSTEM}
@@ -307,7 +352,7 @@ Its is very reliable since a microphone is supported by all existing systems and
 
 
 \begin{enumerate}
-	\item Context level DFD is the most basic representation of the system.
+	\item Context level DFD shown in \autoref{fig:Context level DFD} is the most basic representation of the system.
 	\item This indicates the basic working of the system.
 	\item The user controls the application.
 \end{enumerate}
@@ -323,7 +368,7 @@ Its is very reliable since a microphone is supported by all existing systems and
 \end{figure}
 
 \begin{enumerate}
-	\item Level 0 DFD indicates the basic processes involved in the system.
+	\item Level 0 DFD shown in \autoref{fig:Level 0 DFD} indicates the basic processes involved in the system.
 	\item This level indicates all the processes of our system.
 \end{enumerate}
 
@@ -331,33 +376,33 @@ Its is very reliable since a microphone is supported by all existing systems and
 \label{subsec:LEVEL 1 DFD}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\linewidth]{figures/DFD1.jpg}
-	\caption{DFD1.jpg}
-	\label{fig:DFD1.jpg}
+	\includegraphics[width=0.5\linewidth, height=.8\linewidth]{figures/DFD1.jpg}
+	\caption{Level 1 DFD}
+	\label{fig:DFD1}
 \end{figure}
 
 \begin{enumerate}
-	\item Level 1 DFD represents working of the extension
+	\item Level 1 DFD shown in \autoref{fig:DFD1} represents working of the extension
 \end{enumerate}
 
 \subsection{LEVEL 2 DFD}
 \label{subsec:LEVEL 2 DFD}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\linewidth]{figures/context_level_DFD.png}
-	\caption{Context level DFD}
-	\label{fig:Context level DFD}
+	\includegraphics[width=0.5\linewidth]{figures/DFD2.png}
+	\caption{Level 2 DFD}
+	\label{fig:DFD2}
 \end{figure}
 
 \begin{enumerate}
-	\item Level 2 includes the processing in speech api which fetch data from the server.
+	\item Level 2 shown in \autoref{fig:DFD2} includes the processing in speech api which fetch data from the server.
 \end{enumerate}
 
-\section{TABLE}
-\label{sec:TABLE}
-
-\subsection{ITEMS}
-\label{subsec:ITEMS}
+%\section{TABLE}
+%\label{sec:TABLE}
+%
+%\subsection{ITEMS}
+%\label{subsec:ITEMS}
 
 
 \chapter{IMPLEMENTATION}
@@ -391,34 +436,34 @@ Requirements that helps in developing the software
 
 \subsection{ONLINE DATABASE STORAGE}
 \label{subsec:ONLINE DATABASE STORAGE}
-Online data storage refers to the practice of storing electronic data with a third party service accessed via the Internet. It is an alternative to traditional local storage (such as disk or tape drives) and portable storage (such as optical media or flash drives). It can also be called "hosted storage,""Internet storage" or "cloud storage."
+Online data storage refers to the practice of storing electronic data with a third party service accessed via the Internet. It is an alternative to traditional local storage (such as disk or tape drives) and portable storage (such as optical media or flash drives). It can also be called "hosted storage,""Internet storage" or "cloud storage."
 In recent years, the number of vendors offering online data storage for both consumers and businesses has increased dramatically. Some services store only a particular kind of data, such as photos, music or backup data, while others will allow users to store any type of file. Most of these vendors offer a small amount of storage for free with additional storage capacity available for a fee, usually paid on a monthly or annual basis.
 
 \subsection{WINDOWS}
 \label{subsec:WINDOWS}
-Microsoft Windows (or simply Windows) is a metafamily of graphical operating systems developed, marketed, and sold by Microsoft. It consists of several families of operating systems, each of which cater to a certain sector of the computing industry with the OS typically associated with IBM PC compatible architecture. Active Windows families include Windows NT and Windows Embedded; these may encompass subfamilies, e.g. Windows Embedded Compact (Windows CE) or Windows Server. Defunct Windows families include Windows 9x, Windows Mobile and Windows Phone.
-Microsoft introduced an operating environment named Windows on November 20, 1985, as a graphical operating system shell for MS-DOS in response to the growing interest in graphical user interfaces (GUIs). Microsoft Windows came to dominate the world's personal computer (PC) market with over 90\% market share, overtaking Mac OS, which had been introduced in 1984. Apple came to see Windows as an unfair encroachment on their innovation in GUI development as implemented on products such as the Lisa and Macintosh (eventually settled in court in Microsoft's favor in 1993). On PCs, 
-Windows is still the most popular operating system. However, in 2014, Microsoft admitted losing the majority of the overall operating system market to Android, because of the massive growth in sales of Android smartphones. In 2014, the number of Windows devices sold was less than 25\% that of Android devices sold. This comparison however may not be fully relevant, as the two operating systems traditionally target different platforms.
-As of September 2016, the most recent version of Windows for PCs, tablets, smartphones and embedded devices is Windows 10. The most recent versions for server computers is Windows Server 2016. A specialized version of Windows runs on the Xbox One game console.
+Microsoft Windows (or simply Windows) \cite{Maluth:2012:MWG:2464833} is a metafamily of graphical operating systems developed, marketed, and sold by Microsoft. It consists of several families of operating systems, each of which cater to a certain sector of the computing industry with the OS typically associated with IBM PC compatible architecture. Active Windows families include Windows NT and Windows Embedded; these may encompass subfamilies, e.g. Windows Embedded Compact (Windows CE) or Windows Server. Defunct Windows families include Windows 9x, Windows Mobile and Windows Phone.
+Microsoft introduced an operating environment named Windows on November 20, 1985, as a graphical operating system shell for MS-DOS in response to the growing interest in graphical user interfaces (GUIs). Microsoft Windows came to dominate the world's personal computer (PC) market with over 90\% market share, overtaking Mac OS, which had been introduced in 1984. Apple came to see Windows as an unfair encroachment on their innovation in GUI development as implemented on products such as the Lisa and Macintosh (eventually settled in court in Microsoft's favor in 1993). On PCs, 
+Windows is still the most popular operating system. However, in 2014, Microsoft admitted losing the majority of the overall operating system market to Android, because of the massive growth in sales of Android smartphones. In 2014, the number of Windows devices sold was less than 25\% that of Android devices sold. This comparison however may not be fully relevant, as the two operating systems traditionally target different platforms.
+As of September 2016, the most recent version of Windows for PCs, tablets, smartphones and embedded devices is Windows 10. The most recent versions for server computers is Windows Server 2016. A specialized version of Windows runs on the Xbox One game console.
 
 \subsection{WIFI CONNECTIVITY}
 \label{subsec:WIFI CONNECTIVITY}
-Wi-Fi or WiFi is a technology for wireless local area networking with devices based on the IEEE 802.11 standards. Wi-Fi is a trademark of the Wi-Fi Alliance, which restricts the use of the term Wi-Fi Certified to products that successfully complete interoperability certification testing.
-Devices that can use Wi-Fi technology include personal computers, video-game consoles, smartphones, digital cameras, tablet computers, digital audio players and modern printers. Wi-Fi compatible devices can connect to the Internet via a WLAN network and a wireless access point. Such an access point (or hotspot) has a range of about 20 meters (66 feet) indoors and a greater range outdoors. Hotspot coverage can be as small as a single room with walls that block radio waves, or as large as many square kilometres achieved by using multiple overlapping access points.
+Wi-Fi or WiFi is a technology for wireless local area networking with devices based on the IEEE 802.11 standards. Wi-Fi is a trademark of the Wi-Fi Alliance, which restricts the use of the term Wi-Fi Certified to products that successfully complete interoperability certification testing.
+Devices that can use Wi-Fi technology include personal computers, video-game consoles, smartphones, digital cameras, tablet computers, digital audio players and modern printers. Wi-Fi compatible devices can connect to the Internet via a WLAN network and a wireless access point. Such an access point (or hotspot) has a range of about 20 meters (66 feet) indoors and a greater range outdoors. Hotspot coverage can be as small as a single room with walls that block radio waves, or as large as many square kilometers achieved by using multiple overlapping access points.
 Depiction of a device sending information wirelessly to another device, both connected to the local network, in order to print a document
-Wi-Fi most commonly uses the 2.4 gigahertz (12 cm) UHF and 5 gigahertz (6 cm) SHF ISM radio bands. Having no physical connections, it is more vulnerable to attack than wired connections, such as Ethernet.
+Wi-Fi most commonly uses the 2.4 gigahertz (12 cm) UHF and 5 gigahertz (6 cm) SHF ISM radio bands. Having no physical connections,it is more vulnerable to attack than wired connections, such as Ethernet.
 
 \subsection{JAVASCRIPT}
 \label{subsec:JAVASCRIPT}
-JavaScript  often abbreviated as "JS", is a high-level, dynamic, untyped, interpreted run-time language. It has been standardized in the ECMAScript language specification. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production; the majority of websites employ it, and all modern Web browsers support it without the need for plug-ins.JavaScript is prototype-based with first-class functions, making it a multi-paradigm language, supporting object-based, imperative, and functional programming styles.It has an API for working with text, arrays, dates and regular expressions, but does not include network, storage, or graphics APIs, relying instead upon APIs made available by its host environment.
-Although there are strong outward similarities between JavaScript and Java, including language name, syntax, and respective standard libraries, the two languages are distinct and differ greatly in design; JavaScript was influenced by programming languages such as Self and Scheme.
-JavaScript is also used in environments that are not Web-based, such as PDF documents, site-specific browsers, and desktop widgets. Newer and fasterJavaScript virtual machines (VMs) and platforms built upon them have also increased the popularity of JavaScript for server-side Web applications. On the client side, developers have traditionally implemented JavaScript as an interpreted language, but more recent browsers perform just-in-time compilation. Programmers also use JavaScript in video-game development and in desktop and mobile applications.
+JavaScript \cite{JavascriptTutorialspoint,powell2004javascript}  often abbreviated as "JS", is a high-level, dynamic, untyped, interpreted run-time language. It has been standardized in the ECMAScript language specification. Alongside HTML\cite{htmlW3schools} and CSS\cite{cssW3schools}, JavaScript is one of the three core technologies of World Wide Web content production; the majority of websites employ it, and all modern Web browsers support it without the need for plug-ins\cite{Ahmed:2014:WDP:2675602}. JavaScript is prototype-based with first-class functions, making it a multi-paradigm language, supporting object-based, imperative, and functional programming styles.It has an API for working with text, arrays, dates and regular expressions, but does not include network, storage, or graphics APIs, relying instead upon APIs made available by its host environment\cite{js_validation_apiW3schools} .
+Although there are strong outward similarities between JavaScript and Java, including language name, syntax, and respective standard libraries, the two languages are distinct and differ greatly in design; JavaScript was influenced by programming languages such as Self and Scheme.
+JavaScript is also used in environments that are not Web-based, such as PDF documents, site-specific browsers, and desktop widgets. Newer and faster JavaScript virtual machines (VMs) and platforms built upon them have also increased the popularity of JavaScript for server-side Web applications. On the client side, developers have traditionally implemented JavaScript as an interpreted language, but more recent browsers perform just-in-time compilation. Programmers also use JavaScript in video-game development and in desktop and mobile applications.
 
 \subsection{GOOGLE CHROME BROWSER}
 \label{subsec:GOOGLE CHROME BROWSER}
-Google Chrome is a freeware web browser developed by Google, It was first released in 2008, for Microsoft Windows, and was later ported to Linux, macOS, iOS and Android. Google Chrome is also the main component of Chrome OS, where it serves as a platform for running web apps.
-Google releases the majority of Chrome's source code as the Chromium open-source project.A notable component that is not open-source is the built-in Adobe Flash Player (that Chrome has disabled by default since September 2016). Chrome used the WebKit layout engine until version 27. As of version 28, all Chrome ports except the iOS port use Blink, a fork of the WebKit engine.
-As of February 2017, StatCounter estimates that Google Chrome has a 62\% worldwide usage share of web browsers as a desktop browser. It also has 52\% market share across all platforms combined,because it is also the most popular browser for smartphones. Its success has led to Google expanding the "Chrome" brand name on various other products such as Chromecast, Chromebook, Chromebit, Chromebox and Chromebase.
+Google Chrome is a freeware web browser developed by Google, It was first released in 2008, for Microsoft Windows, and was later ported to Linux\cite{Siever:2005:LN:1212560} , macOS, iOS and Android. Google Chrome is also the main component of Chrome OS, where it serves as a platform for running web apps \cite{chromeExtension}.
+Google releases the majority of Chrome's source code as the Chromium open-source project.A notable component that is not open-source is the built-in Adobe Flash Player (that Chrome has disabled by default since September 2016). Chrome used the WebKit layout engine until version 27. As of version 28, all Chrome ports except the iOS port use Blink, a fork of the WebKit engine.
+As of February 2017, StatCounter estimates that Google Chrome has a 62\% worldwide usage share of web browsers as a desktop browser. It also has 52\% market share across all platforms combined,because it is also the most popular browser for smartphones. Its success has led to Google expanding the "Chrome" brand name on various other products such as Chromecast, Chromebook, Chromebit, Chromebox and Chromebase.
 
 
 \section{DETAILS OF IMPLEMENTATION}
@@ -428,7 +473,17 @@ The main objective of our project is to design a wheelchair that will be control
 The implementation stage involves careful planning, investigation of the existing system and it's constraints on implementation, designing of methods to achieve changeover and evaluation of changeover methods.
 
 \subsection{SOURCE CODE}
-\label{sec:SOURCE CODE}
+\label{subsec:SOURCE CODE}
+\subsubsection{Javascript code}
+\label{subsubsec:Javascript code}
+\lstinputlisting{code/tab.js}
+\subsubsection{Json code}
+\label{subsubsec:Json code}
+\lstinputlisting[language=json]{code/manifest.json}
+\subsubsection{HTML code}
+\label{subsubsec:HTML code}
+\lstinputlisting[language=HTML]{code/jj.html}
+
 
 \chapter{TESTING}
 \label{cha:TESTING}
@@ -539,11 +594,15 @@ recognizers simply by their percentage recognition accuracy. A developer must al
 consider the seriousness of recognition errors: misrecognition of a bank account number
 or the command "delete all files" may have serious consequences. The following is a list
 of major factors that influence recognition accuracy.
-Recognition accuracy is usually higher in a quiet environment.
-Higher-quality microphones and audio hardware can improve accuracy.
-Users that speak clearly (but naturally) usually achieve better accuracy.
-Users with accents or atypical voices may get lower accuracy.
-Applications with simpler grammars typically get better accuracy.
+\begin{itemize}
+	\item Recognition accuracy is usually higher in a quiet environment.
+	\item Higher-quality microphones and audio hardware can improve accuracy.
+	\item Users that speak clearly (but naturally) usually achieve better accuracy.
+	\item Users with accents or atypical voices may get lower accuracy.
+	\item Applications with simpler grammars typically get better accuracy.
+\end{itemize}
+
+
 
 \section{ACHIEVEMENTS}
 \label{sec:ACHIEVEMENTS}
@@ -561,24 +620,49 @@ Users will be free to leave their keyboards and mouses and can depend on just th
 
 
 \section{SCREEN SHOTS} 
-\label{App:Appendix1}
+\label{App:SCREEN SHOTS}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/screen1.jpg}
+	\caption{Screen short 1}
+	\label{fig:Screen short 1}
+\end{figure}
 
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/screen2.jpg}
+	\caption{Screen short 2}
+	\label{fig:Screen short 2}
+\end{figure}
 
-\begin{appendix}    
-	
-\end{appendix}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/screen3.jpg}
+	\caption{Screen short 3}
+	\label{fig:Screen short 3}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/screen4.jpg}
+	\caption{Screen short 4}
+	\label{fig:Screen short 4}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/screen5.jpg}
+	\caption{Screen short 5}
+	\label{fig:Screen short 5}
+\end{figure}
 
 
-
-
-%\nocite{Charaka}
-%\nocite{Ayurvedic}
-%\nocite{Susrutha}
-%\nocite{Chikitsa}
-%\nocite{Shodala}
-%\nocite{Arka}
-%\bibliographystyle{unsrt}
-%\bibliography{synopsis}
+\nocite{HTTPWikipedia}
+\nocite{javahttpsessionStackoverflow}
+\bibliographystyle{unsrt}
+\bibliography{reference}
 
 \end{document}

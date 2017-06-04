@@ -1,6 +1,6 @@
-
 function win(){
-window.open('http://localhost/new-tab/jj.html','_self', 'windowName', "height=400,width=600");
+window.open('http://localhost/new-tab/jj.html','_self',\
+ 'windowName', "height=400,width=600");
 }
 try{
 chrome.tabs.getSelected(null,function(tab) {
@@ -43,9 +43,10 @@ httpGet();
 }, 500);
 function httpGet()
 {
-        
+
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://localhost/new-tab/text.php', false ); // false for synchronous request
+    // false for synchronous request
+    xmlHttp.open( "GET", 'http://localhost/new-tab/text.php', false );
     xmlHttp.send( null );
     var funct=xmlHttp.responseText;
     console.log(funct);
@@ -67,17 +68,20 @@ function httpGet()
         break;
         case 'help':OpenTabs(funct);
     httpClear();
-        break; 
+        break;
     }
 }
 
 function httpClear(){
     var clearHttp = new XMLHttpRequest();
-    clearHttp.open( "GET", 'http://localhost/new-tab/text.php?data', false ); // false for synchronous request
+    // false for synchronous request
+    clearHttp.open( "GET", 'http://localhost/new-tab/text.php?data', false );
     clearHttp.send( null );
 }
 
-var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+var recognition = new (window.SpeechRecognition
+  || window.webkitSpeechRecognition || window.mozSpeechRecognition
+  || window.msSpeechRecognition)();
 function reco(){
 console.log('Recognition Function Called');
 recognition.lang = 'en-US';
@@ -145,7 +149,9 @@ recognition.start();
     function httpGet(val)
     {
         var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", 'http://localhost/new-tab/text.php?data='+val, false ); // false for synchronous request
+        // false for synchronous request
+        xmlHttp.open( "GET",
+        'http://localhost/new-tab/text.php?data='+val, false ); 
         xmlHttp.send( null );
         console.log(xmlHttp.responseText);
     }
