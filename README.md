@@ -33,4 +33,3 @@ in the terminal.
 To compile the file with references use the command
 
 pdflatex miniProject.tex && bibtex miniProject.aux && pdflatex miniProject.tex && pdflatex miniProject.tex
-
