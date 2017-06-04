@@ -1,0 +1,555 @@
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+\geometry{margin=0.75in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+%%% PACKAGES
+\usepackage{datetime} % for date without day
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{epstopdf}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}                      % Gives us \mathscr for \setset
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage[normalem]{ulem}
+\newcommand{\subfigureautorefname}{\figureautorefname}
+\usepackage{chemarr}
+\definecolor{Gray}{gray}{0.85}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR} % new date format
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{indentfirst}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks,
+	linkcolor={blue!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
+% for writing algorithms
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\makeatletter
+\newcommand{\removelatexerror}{\let\@latex@error\@gobble}
+\makeatother
+
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% New commands%%%%%
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\addtocontents{loa}{\def\string\figurename{Algorithm}} % list of algorithms
+
+
+
+%%% GRAPHICS PATH
+%\graphicspath{{E:/DissertationProspectus/figures/}}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\begin{document}
+	
+	%Title Page
+	\thispagestyle{empty}
+	\begin{center}
+		\begin{minipage}{\linewidth}
+			\centering
+			%Thesis Title
+			\vspace{3cm}
+			{\Huge \bf{Voice Command Browsing (Extension for Google Chrome  Browser)}\par}
+			\vspace{1cm}
+			%Report type		
+			{\Large \bfseries{MINI PROJECT REPORT}\par}
+			\vspace{0.5cm}
+			{\Large \emph{Submitted in partial fulfillment of the requirements for the award of degree of}\par}
+			\vspace{0.5cm}
+			{\Large \bf{BACHELOR OF TECHNOLOGY} \par}
+			\vspace{0.5cm}
+			{\Large \bf{BY} \par}
+			\vspace{1cm}
+			%Author's name
+			{\Large \bf{RAJESH R NAIR}\hspace{3cm}     Reg.no:14015695 \par}
+			{\Large \bf{UNNIKRISHNAN}\hspace{3cm}      Reg.no:14015695\par}
+			\vspace{1cm}
+			%School
+			{\Large \bfseries{SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY}\par}
+			{\Large \emph{(Affiliated to M.G. University)}\par}
+			{\Large VIDYA NAGAR, PALISSERY, KARUKUTTY\par}
+			{\Large ERNAKULAM – 683 582\par}
+			\vspace{4cm}
+			
+			%\vspace{2cm}
+			
+			%Date
+			{\Large \monthyeardate \today}
+		\end{minipage}
+	\end{center}
+	\clearpage
+	
+	
+	
+	%Abstract Page
+	\thispagestyle{empty}
+	\begin{center}
+		\begin{minipage}{\linewidth}
+			\vspace{3cm}
+			{\centering \bf{Abstract}\par}
+			\vspace{0.5cm}
+			Advances in sensing, computing, actuation, and manufacturing technologies have led to the development of inexpensive,  relatively expendable robots that can be deployed in very large numbers, or \textit{swarms}. Robotic swarms can potentially perform complicated tasks such as exploration and mapping at large space and time scales in a highly parallel and robust fashion. This thesis prospectus presents ongoing work on developing strategies for mapping environmental features of interest -- specifically obstacles, collision-free paths, and scalar density fields -- in an unknown domain using data obtained by a swarm of resource-constrained robots.  The robots can measure local sensor information but lack global localization and are restricted to local or no inter-robot communication.			
+			
+		\end{minipage}
+	\end{center}
+	\clearpage
+	
+	\tableofcontents
+	\newpage
+
+\section{Introduction}
+\label{sec:Intro}
+
+
+
+\subsection{Background}
+\label{subsec:background}
+
+According to epidemiological statistics as per WHO, CVDs are the number 1 cause of
+death globally. An estimated 17.5 million people die each year from CVDs, representing 31\% of
+all global deaths. 75\% of CVD deaths take place in low- and middle-income countries. Hence a
+major focus towards research in cardiovascular medicine is inevitable.
+
+\textbf{WHO} defines cardiomyopathies as ''diseases of the myocardium associated with cardiac dysfunction.'' Among the different types of cardiomyopathy, dilated cardiomyopathy is the most common form and the major cause of morbidity and mortality. It is also the third most common cause of heart failure and most common cause of heart transplant.
+
+Acquired form of dilated cardiomyopathy can occur as a secondary condition of peripartum
+pregnancy, due to many diseases like coronary heart disease, diabetes, infections, malnutrition, or due to ingestion of toxic substances like alcohol, and due to chemotherapeutic agents like doxorubicin and daunorubicin.
+
+Doxorubicin is anthracycline antibiotic having antitumor activity. It is an effective and
+frequently used chemotherapeutic agent for various malignancies. The major adverse effect is
+cardiotoxicity, which limits its use and reduces its therapeutic index. Doxorubicin
+cardiomyopathy, once developed, carries a poor prognosis and is frequently fatal. Possible
+cardiovascular damage by anthracyclines include congestive heart failure, left ventricular
+dysfunction, acute myocarditis and arrhythmia. At the cellular level, it causes morphological
+alterations in nucleus, mitochondria, and structural fibrous proteins. Various biochemical
+alterations like DNA damage, ATP block, apoptotic protein release and ROS generation also
+occur.
+
+Doxorubicin-induced cardiomyopathy is strongly linked to an increase in cardiac oxidative
+stress, as evidenced by reactive oxygen species (ROS) induced damage such as lipid
+peroxidation, along with reduced levels of antioxidants and sulfhydryl groups. Myofibrillar
+deterioration and intracellular calcium dysregulation are also important mechanisms commonly
+associated with doxorubicin-induced cardio toxicity.
+
+Although extensive research has been done to find effective treatment of doxorubicin
+cardiomyopathy, no such treatment has been discovered. Hence the effect of Dashamoolam
+Kashaya and its kalpana bhedas mentioned in Hridroga chikitsa of Chikitsa manjari is being
+explored for its potential role as a drug of choice in the treatment of dilated cardiomyopathy and for its cardioprotective action.
+
+\subsubsection{Rationale}
+\label{subsubsec:RATIONALE}
+
+The Dasamoola gana contains various phytochemicals such as alkaloids, tannins, saponins,
+flavonoids and quinones, total phenolic content (567 mg gallic acid equivalent/100 g) and
+exhibits antioxidant (44.86\%) and anti-inflammatory activities (32.56\%), which are contributed by its herbal ingredients, especially Aegle marmelos and Gmelia arborea. The highest antioxidant activity was shown by A. marmelos , which is followed by S. indicum and Dasamula preparation. \cite{Mahadevan2016}
+
+Various bioactivities of phenolic compounds are responsible for their chemopreventive
+properties (e.g., antioxidant, anticarcinogenic, or antimutagenic and anti-inflammatory
+effects). \cite{Mahadevan2016}
+
+Thus previous research articles on various individual drug constituents of the poly herbal
+formulation clearly suggests proven antioxidant, anti inflammatory, antiplatelet, cardiac
+stimulant and cardioprotective actions.\cite{Malviya2012,Kurian2009,Pathala2015,Chhatre2014}
+
+Antioxidant are man made or natural substances that may prevent or delay some type of cell
+damages, by terminating the chain reaction by removing free radical intermediates. Plants and
+animals maintain complex system of multiple type of antioxidant; the natural plant based
+antioxidants are playing an important role in the maintenance of human health for the past three decades. The best known are tocopherols, flavonoids,vitamin C and other phenolic compounds. Since one of the proposed principal mechanisms of doxorubicin cardiotoxicity are increased oxidative stress, an antioxidant rich poly herbal formulation becomes primary focus.
+
+Dashamoola has proven antioxidants and free radicle scavengers. With its established anti
+inflammatory activity , it may also prove to be effective in certain acquired forms of dilated
+cardiomyopathy arising secondary to infections. Dilated cardiomyopathy can lead to blood clots
+or chest pain wherein the analgesic and antiplatelet activity of dashamoola can have utility.
+Thus the formulation has been selected in view of its potent effects to counteract the alterations occuring in the micro environment of the cell.
+
+\subsubsection{Ayurvedic perspective}
+\label{subsubsec:Ayurvedic perspective}
+
+Dashamoola has a wide spectrum of biological activity. The morphological alterations at the
+cellular level may be understood as Vatika through the perspective of tridosha. Hridaya being
+one among the trimarma, excessive theekshna and ushna prayogas cannot be administered
+continuously. Hence a combination like Dashamoola and its kalpana bheda is being studied.
+
+\subsubsection{Role of invitro cell line study}
+\label{subsubsec:Role of invitro cell line study}
+
+The invitro evaluation of the cardioprotective action of Dashamoola in doxorubicin
+induced cardiomyopathy will permit an enormous level of simplification of the system under
+study, so that the investigator can focus on a small number of components as the extra ordinary
+complexity of living organisms is a great barrier for the exploration of their basic biological
+function.
+
+Main strategy of minimizing cardiotoxicity is early detection of high risk patients and
+prompt prophylactic treatment for which biochemical markers are now being closely scrutinized.
+Hence the assessment of product performance through direct action on cardiomyoblasts can
+prove to be a valuable tool in assessing the product performance more precisely.
+
+\subsection{Scope of study}
+\label{subsec:scope}
+
+There is always a preference for antioxidants from natural rather than from synthetic
+sources, therefore a parallel increase in the methods for estimating the efficiency of such natural antioxidants is an important matter of research. This study aims to evaluate the synergestic action of these drugs when incorporated as a formulation.
+
+The invitro study of various kalpanas of dashamoola would help us explore the
+mechanism of action of this formulation in the minutest level of the complex cardio vascular
+system. This could possibly pave the way to access the corresponding systemic action of this
+formulation and further the estimation of efficacy of the same in Clinical trials.
+
+This study may also help us by throwing light on the aspect as to whether the preparation
+benefits the patient by acting only at the periphery level enhancing hemodynamic flow or at a
+central level by acting on cardiomyocytes directly.
+
+The utility of anthracycline antineoplastic agents in the clinic is compromised by the risk
+of cardiotoxicity. It has been calculated that approximately 10\% of patients treated with
+doxorubicin or its derivatives will develop cardiac complications up to 10 years after the
+cessation of chemotherapy. This poly herbal combination if found to be cardioprotective may
+have the potential to reduce the impact of cardiotoxicity when advised as an adjuvant during
+chemotherapy or can be used as a prophylactic in preventing cardiovascular complications of
+chemotherapy. It can also become a safe and effective option in peripartum cardiomyopathy.
+
+\subsection{Objective}
+\label{subsec:Objective}
+
+
+\begin{enumerate}
+	\item[a] To evaluate the action of various kalpanas of Dashamoola in doxorubicin induced
+	cardiomyopathy through in vitro cell line study on H9c2 cardiomyoblast cells.
+	\item[b] Preparation and Physicochemical analysis of various kalpanas of Dashamoola.
+\end{enumerate}
+
+
+\subsection{Hypothesis}
+\label{subsec:Hypothesis}
+
+\begin{enumerate}
+	\item[a] \textit{Null hypothesis} :
+	Kalpanas of Dashamoola has no invitro cardioprotective action against doxorubicin induced
+	cardiomyopathy on H9c2 cardiomyoblasts.
+	\item[b] \textit{Alternative Hypothesis}: 
+	Kalpanas of Dashamoola shows invitro cardioprotective activity against doxorubicin induced
+	cardiomyopathy on H9c2 cardiomyoblasts.
+\end{enumerate}
+
+
+\section{Methodology}
+\label{sec:Methodology}
+
+\textbf{PLAN OF STUDY:}
+
+\begin{itemize}
+	\item Review of related literature.
+	\item Pharmaceutical preparation and physicochemical analysis.
+	\item Cardioprotective action by cell line study.
+	\item Data analysis.
+\end{itemize}
+
+\textbf{REVIEW OF RELEVANT LITERATURE:}
+
+An extensive literary survey of subject will be collected from 
+
+\begin{itemize}
+	\item Relevant Ayurveda texts.
+	\item Modern medicine texts.
+	\item Contemporary journals.
+	\item Electronic search (using Pub Med, Google Scholar and Web of Science).
+	\item Other related sources.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%% TO BE COMPLETED%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Study Design :} Invitro cell Line Study.
+
+\textbf{Study period :}  18 months.
+
+\textbf{Study population :} Doxorubicin treated H9c2 cardiomyoblasts
+
+\textbf{Sample size :} Not applicable
+
+\textbf{Study Setting : } 
+
+\begin{itemize}
+	\item[1] \textbf{Drug preparation:}\\
+	Department of Rasa sastra \&  Bhaishajya kalpana   \\           	             Govt.Ayurveda College, Tripunithura
+	\item[2] \textbf{Vitro cell line study} in Biogenix Research \\
+	Centre,Trivandrum
+	\item[3] \textbf{Analytical study:}\\
+	Department of Rasa sastra \& Bhaishajya kalpana \\
+	Govt.Ayurveda College, Tripunithura
+\end{itemize}
+
+\textbf{Inclusion Criteria :} Not applicable 
+
+\textbf{Exclusion Criteria :} Not applicable 
+	
+\textbf{Sampling Technique :} Not applicable 
+
+\textbf{Data Collection    :} Primary data collected from lab experiments\\
+
+
+\textbf{Analytical Study:}
+
+\begin{enumerate}
+	\item Organoleptic Characters
+	\begin{itemize}
+		\item colour
+		\item odour
+		\item taste
+	\end{itemize}
+	\item Physicochemical Analysis
+	\begin{itemize}
+		\item Kashaya and Ksheerapaka
+		\begin{itemize}
+			\item[-] pH
+			\item[-] HPTLC
+			\item[-] Specific gravity
+			\item[-] Total ash
+			\item[-] Acid insoluble ash
+		\end{itemize}
+		\item Arka
+		\begin{itemize}
+			\item[-] pH
+			\item[-] Specific gravity
+			\item[-] HPTLC
+		\end{itemize}
+	\end{itemize}
+\end{enumerate}
+
+\textbf{Study Tools:}
+
+\begin{enumerate}
+	\item Cytotoxicity assay by MTT method
+	\item Cytotoxicity assay by Direct microscopic observation.
+	\item Mitopotential flow cytometry
+	\item Annexin V/FITC flow cytometry
+	\item DCFDA Staining
+\end{enumerate}
+
+\subsection{Procedure}
+\label{subsec:Procedure}
+
+\subsubsection{Cell culture and Treatment}
+\label{subsubsec:Cell culture and Treatment}
+
+H9C2 (cardiomyoblast cell line) was initially procured from National Centre for Cell Sciences (NCCS), Pune, India and maintained in Dulbecos modified Eagles medium ( Gibco, Invitrogen).
+
+The  cell line was  cultured in 25 cm$^2 $ tissue culture flask with DMEM supplemented with 10\% FBS, L-glutamine, sodium bicarbonate and antibiotic solution containing: Penicillin (100U$\mu$g/ml), Streptomycin (100$\mu$g/ml), and Amphotericin B (2.5$\mu$g/ml). Cultured cell lines were kept at 37$^{\circ}$C in a humidified 5\% CO$_2$ incubator (NBS Eppendorf, Germany). 
+
+The viability of cells were evaluated by direct observation of cells by Inverted phase contrast microscope and followed by MTT assay method.
+
+\subsubsection{Cells seeding in 96 well plate}
+\label{subsubsec:Cells seeding in 96 well plate}
+
+Two days old confluent monolayer of cells were trypsinized and the cells were suspended in 10\% growth medium, 100$\mu$l cell suspension ($ 5\times104 $ cells/well) was seeded in 96 well tissue culture plate and incubated at 37$^{\circ}$C in a humidified 5\% CO$_2$ incubator. 
+
+\subsubsection{Dosage Optimization Study}
+\label{subsub:Dosage Optimization Study}
+
+Nontoxic concentrations of various kalpanas of dashamoola will be determined by standard
+MTT Assay in H9C2 cardiomyoblast cells. Briefly, different concentrations of samples such as
+1.75$\mu$l, 3.75$\mu$l, 6.5$\mu$l, 12.5$\mu$l, 25$\mu$l, 50$\mu$l, 100$\mu$l volumes of extracts were added to 70\% confluent H9C2 cells, incubated for 24 hours and viability was determined by MTT Assay. Morphological changes were recorded using a phase contrast microscopy (Olympus CKX41 20X magnification). LD50 values will be calculated using ED50 plus version 1.0 and sublethal concentrations were used for further studies.
+
+\subsubsection{ Preparation of compound stock}
+\label{subsubsec: Preparation of compound stock}
+
+After that the extract solution was filtered through 0.22 $\mu$m Millipore syringe filter to
+ensure the sterility.
+
+Doxorubicin was used to induce toxicity as per methods described by Xiao et al, 2012. After 24
+hours the growth medium was removed, Doxorubicin (Sigma Aldrich, US) was added at a final
+concentration of 0.1\% to induce toxicity and incubated for an hour.
+
+Sublethal concentrations of the kalpanas previously filtered through 0.22$\mu$m Millipore syringe filter was added to the 70\% confluent cells.
+
+The nontoxic concentrations are to be added in triplicates to respective wells of cells and
+incubated at 37$^{\circ}$C in a humidified 5\% CO$ ^{2} $ incubator.
+
+\subsubsection{Study tools}
+\label{subsubsec:Study tools}
+
+\begin{itemize}
+	\item \textbf{Cytotoxicity Assay by Direct Microscopic observation:} \\
+	Entire plate was observed at after 24 hours in an inverted phase contrast tissue culture microscope (Olympus CKX41 with Optika Pro5 CCD camera) and microscopic observation were recorded as images.  Any detectable changes in the morphology of the cells, such as rounding or shrinking of cells, granulation and vacuolization in the cytoplasm of the cells were considered as indicators of cytotoxicity.  
+	\item \textbf{Cytotoxicity Assay by MTT Method:} \\
+	The purpose of this assay is to essentially measure the number of metabolically active cells in a 96-well plate.
+	
+	Fifteen mg of MTT (Sigma, M-5655) was reconstituted in 3 ml PBS until completely dissolved and sterilized by filter sterilization. After 24  hours of incubation period, the sample content in wells were removed and 30$\mu$l of reconstituted MTT solution was added to all test and cell control wells, the plate was gently shaken well, then incubated at 37$^{\circ}$C in a humidified 5\% CO$_2 $ incubator for 4 hours. After the incubation period, the supernatant was removed and 100$\mu$l of MTT Solubilization Solution ( DMSO was added and the wells were mixed gently by pipetting up and down  in order to solubilize the formazan crystals. The absorbance values were measured by using microplate reader at a wavelength of 570 nm (\textit{Laura B. Talarico et al., 2004}).
+	
+	The percentage of growth inhibition was calculated using the formula:
+	
+	\begin{equation}
+	\label{eqn:viability}
+	\%\ of\ viability = \frac{Mean\ OD\ Samples \times 100}{Mean\ OD\ of\ control\ group}
+	\end{equation}
+	
+	\item \textbf{Mitopotential Flow cytometry:} to check the opening of the mitochondrial permeability transition pore (PTP).
+	\item \textbf{APOPTOSIS – Measurement by ANNEXIN V/FITC FLOW CYTOMETERY} \\
+	To assess the rate of apoptosis
+	\item \textbf{ROS GENERATION – By DCFDA STAINING} \\
+	To measure the intracellular ROS(Reactive Oxygen Species) production.
+	\item \textbf{Method of Preparation – ANNEXURE 1}
+\end{itemize}
+
+\section{Outcome Variable}
+\label{sec:Outcome Variable}
+
+Cardioprotective activity in doxorubicin induced cardiomyopathy on H9c2 cardiomyoblasts by MTT method, direct microscopic observation, mitopotential flow cytometry, Annexin V/FITC flow cytometry, DCFDA staining.
+
+
+\section{Statistical Analysis}
+\label{sec:Statistical Analysis}
+
+Appropriate statistical technique, if necessary, for the description and summarization of data will be adopted.
+
+\section{Results and conclusion}
+\label{sec:Results and conclusion}
+
+The outcome of the work will be concluded after discussion.
+
+\section{Ethical Consideration}
+\label{Sec:ethical}
+
+Not Applicable
+
+
+
+
+%%%%%%%%%%%%%%%%%% GLOSSARIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Glossary}
+\label{sec: Glossary}
+
+\begin{itemize}
+	\item \textbf{Cardio Protective Agent - } Any protective agent that is able to prevent damage to the heart.
+	\item \textbf{H9c2 cardiomyoblast - } A sub clone of the original clonal cell line derived from embryonic rat heart tissue.
+	\item \textbf{Cell line - }A cell culture developed from a single cell and having uniform genetic composition. \\
+	Cell lines provide a pure population of cells which is valuable since it produces a    consistent sample and reproducible results.
+	\item \textbf{Antioxidants - } A substance (such as beta-carotene or vitamin C) that inhibits oxidation or reactions promoted by oxygen, peroxides, or free radicals.	
+	\item \textbf{MTT Assay - } It is a colorimetric assay for assessing cell metabolic activity.
+	\item \textbf{Mitopotential Flow Cytometry - } An assay to detect the loss of mitochondrial membrane potential that occurs during apoptosis.
+	\item \textbf{ROS - } Reactive Oxygen Species is a phrase used to describe a number of reactive molecules and free radicals derived from molecular oxygen.
+	\item \textbf{Apoptosis - } Process of programmed cell death that occurs in multicellular organisms.
+\end{itemize}
+
+
+
+\section*{ANNEXURE 1}
+
+Physico chemical analysis is done and from this the required samples are taken.
+
+
+%%%%%%%%%%%%%%%%%%%%%%% TABLE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[h]
+	\centering
+	\caption{Drugs and their Quantity}
+	\label{tab:Raw Drug}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		RAW DRUG                            & SCIENTIFIC NAME          & QUANTITY         \\ \hline
+		Bilwa                               & Aegle marmelos           & 1 part   \\ \hline
+		Agnimantha                          & Premna mucronata         & 1 part   \\ \hline
+		Shyonaka                            & Oroxylum indicum         & 1 part   \\ \hline
+		Gambhari                            & Gmelina arborea          & 1 part   \\ \hline
+		Paatala                             & Stereospermum suaveolens & 1 part   \\ \hline
+		Shaalaparni                         & Desmodium gangeticum     & 1 part   \\ \hline
+		Prishniparni                        & Uraria picta             & 1 part   \\ \hline
+		Gokshura                            & Tribulus terrestris      & 1 part   \\ \hline
+		Brihathi                            & Solanum indicum          & 1 part   \\ \hline
+		Kantakaari                          & Solanum xanthocarpum     & 1 part   \\ \hline
+	\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{METHOD OF PREPARATION:}
+
+\begin{enumerate}
+	\item \textbf{Dashamoola sritha Kashaya}\\
+	Roots of the medicinal plant group is crushed and 16 times water is to be added. It is then heated and reduced to 1/8 th . The decoction thus obtained is filtered and used.
+	\item \textbf{Dashamoola Ksheerapaka}\\
+	Roots of the medicinal plant group is crushed and put into a mixture of 8 times milk and 32 times water. It is then boiled and reduced to the amount of milk.
+	\item \textbf{Dashamoola Arka}\\
+	The drugs are cleaned and coarsely powdered. Ten times water should be added to it and is
+	soaked for 24 hrs. Then Arka is extracted by using Arka yantra.
+\end{enumerate}
+
+%\begin{itemize}
+%	\item The ingredients are added with 5 adhaka(15 l) of water. It is boiled till yava is cooked properly.
+%	\item Then the decoction is filtered and added with cooked harithaki, 8 palas(384 g) of ghrita and thaila, and 1 tula (4.8kgs) of guda.
+%\end{itemize}
+%
+%Chitraka Shodhana: Chitraka is used after shodhana for the preparation of Agasthya hareethaki.  
+%
+%\begin{itemize}
+%	\item Roots of chitraka are cut into smaller pieces and are kept immersed in choornodaka for 24 hours. Later these roots are taken out, washed with warm water and dried.
+%	\item Preparation of Choornodaka(Rasa tarangini):
+%	\item 2 ratti(250mg) of churna is added with 5 tola(60 ml) of water and left undisturbed for 3 yama (9 hrs). Later it is filtered and stored in a glass bottle.
+%\end{itemize}
+%
+%Avaleha is prepared according to Avaleha kalpana in Sharangadhara Samhita. After cooling, add 1 kudava (192g) each of honey and pippali.
+\begin{appendix}    
+	%\listoffigures
+	\listoftables
+\end{appendix}
+
+%\nocite{Charaka}
+%\nocite{Ayurvedic}
+%\nocite{Susrutha}
+%\nocite{Chikitsa}
+%\nocite{Shodala}
+%\nocite{Arka}
+%\bibliographystyle{unsrt}
+%\bibliography{synopsis}
+
+\end{document}
