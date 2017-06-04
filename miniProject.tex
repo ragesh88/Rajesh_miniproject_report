@@ -98,13 +98,13 @@
 		\begin{minipage}{\linewidth}
 			\centering
 			%Thesis Title
-			\vspace{3cm}
+			\vspace{2cm}
 			{\Huge \bf{Voice Command Browsing (Extension for Google Chrome  Browser)}\par}
 			\vspace{1cm}
 			%Report type		
 			{\Large \bfseries{MINI PROJECT REPORT}\par}
 			\vspace{0.5cm}
-			{\Large \emph{Submitted in partial fulfillment of the requirements for the award of degree of}\par}
+			{\Large \emph{Submitted in partial fulfillment of the requirements for the award of degree}\par}
 			\vspace{0.5cm}
 			{\Large \bf{BACHELOR OF TECHNOLOGY} \par}
 			\vspace{0.5cm}
@@ -112,14 +112,17 @@
 			\vspace{1cm}
 			%Author's name
 			{\Large \bf{RAJESH R NAIR}\hspace{3cm}     Reg.no:14015695 \par}
-			{\Large \bf{UNNIKRISHNAN}\hspace{3cm}      Reg.no:14015695\par}
+			{\Large \bf{UNNIKRISHNAN}\hspace{3cm}      Reg.no:14015695 \par}
 			\vspace{1cm}
+			% logo							
+			\includegraphics[width=0.5\linewidth]{figures/logo.png}
+			
 			%School
 			{\Large \bfseries{SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY}\par}
 			{\Large \emph{(Affiliated to M.G. University)}\par}
 			{\Large VIDYA NAGAR, PALISSERY, KARUKUTTY\par}
 			{\Large ERNAKULAM – 683 582\par}
-			\vspace{4cm}
+			\vspace{1cm}
 			
 			%\vspace{2cm}
 			
@@ -130,6 +133,47 @@
 	\clearpage
 	
 	
+	% Certificate page
+	\thispagestyle{empty}
+	\begin{center}
+		\begin{minipage}{\linewidth}
+			\centering
+			\vspace{1cm}			
+			% logo		
+			\includegraphics[width=0.5\linewidth]{figures/logo.png}
+			\vspace{1cm}
+			%School
+			{\Large \bf{SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY}\par}
+			{\Large \emph{(Affiliated to M.G. University)}\par}
+			{\Large VIDYA NAGAR, PALISSERY, KARUKUTTY\par}
+			{\Large ERNAKULAM – 683 582\par}
+			\vspace{1cm}
+			{\Large \bf{\underline{BONAFIDE CERTIFICATE}}\par}
+			\vspace{0.5cm}
+			\begin{flushleft}
+				This is to certify that the mini project, titled ''Voice Command Browsing (Extension for Google Chrome  Browser)'' by
+			\end{flushleft} 
+			%\vspace{0.5cm}
+			%Author's name
+			{ \bf{RAJESH R NAIR}\hspace{3cm}     Reg.no:14015695 \par}
+			{ \bf{UNNIKRISHNAN}\hspace{3cm}      Reg.no:14015695 \par}
+			\begin{flushleft}
+				submitted in partial fulfilment of the requirement for the award of the degree of Bachelor of Technology, is a bonafide work carried under supervision, during the academic year 2015-2016.
+			\end{flushleft}
+			{ \bf{Ms.DEEPA SREE VARMA}\hspace{3cm}     Prof VINOD P \par}
+			{ \bf{PROJECT GUIDE}\hspace{2cm}      HEAD OF DEPARTMENT \par}
+			
+			\vspace{2cm}
+			
+			{ \bf{INTERNAL EXAMINER}\hspace{3cm}     EXTERNAL EXAMINER \par}
+			
+			
+		\end{minipage}
+	\end{center}
+	\clearpage
+	
+	
+	
 	
 	%Abstract Page
 	\thispagestyle{empty}
@@ -138,7 +182,22 @@
 			\vspace{3cm}
 			{\centering \bf{Abstract}\par}
 			\vspace{0.5cm}
-			Advances in sensing, computing, actuation, and manufacturing technologies have led to the development of inexpensive,  relatively expendable robots that can be deployed in very large numbers, or \textit{swarms}. Robotic swarms can potentially perform complicated tasks such as exploration and mapping at large space and time scales in a highly parallel and robust fashion. This thesis prospectus presents ongoing work on developing strategies for mapping environmental features of interest -- specifically obstacles, collision-free paths, and scalar density fields -- in an unknown domain using data obtained by a swarm of resource-constrained robots.  The robots can measure local sensor information but lack global localization and are restricted to local or no inter-robot communication.			
+			Put Abstract here.....
+		\end{minipage}
+	\end{center}
+	\clearpage
+	
+	
+	%ACKOWLEDGEMENT Page
+	\thispagestyle{empty}
+	\begin{center}
+		\begin{minipage}{\linewidth}
+			\vspace{3cm}
+			{\centering \bf{ACKOWLEDGEMENT}\par}
+			\vspace{0.5cm}
+			We are greatly indebted to Prof.M.Madhavan, Principal, SSET, Ernakulam and Prof.Vinod, Head of department, Department of Computer Science and Engineering, SSET, who whole heartedly granted us the permission to carry out the mini project.
+			We would like to thank our guide, Ms.Deepa Sree Varma, Assistant Professor, Department of  Computer Science and Engineering, SSET who has given us valuable guidance and support throughout the project. Also, we would like to thank our project coordinators, Ms.Shilpa  P C and Ms.Gayathri  Assistant Professors, Department of Computer Science and Engineering, SSET, who supported and instructed us all the way.
+			We would like to express our sincere gratitude to all the teachers of Computer Science Department who gave us moral and technical support through the course of our mini project. We would like to thank the supporting staff in the Computer lab whose dedicated work kept the lab working smoothly, thus ensuring our time at the lab went hassle free.
 			
 		\end{minipage}
 	\end{center}
@@ -152,87 +211,15 @@
 
 
 
-\subsection{Background}
-\label{subsec:background}
+\subsection{OVERVIEW}
+\label{subsec:OVERVIEW}
 
-According to epidemiological statistics as per WHO, CVDs are the number 1 cause of
-death globally. An estimated 17.5 million people die each year from CVDs, representing 31\% of
-all global deaths. 75\% of CVD deaths take place in low- and middle-income countries. Hence a
-major focus towards research in cardiovascular medicine is inevitable.
 
-\textbf{WHO} defines cardiomyopathies as ''diseases of the myocardium associated with cardiac dysfunction.'' Among the different types of cardiomyopathy, dilated cardiomyopathy is the most common form and the major cause of morbidity and mortality. It is also the third most common cause of heart failure and most common cause of heart transplant.
 
-Acquired form of dilated cardiomyopathy can occur as a secondary condition of peripartum
-pregnancy, due to many diseases like coronary heart disease, diabetes, infections, malnutrition, or due to ingestion of toxic substances like alcohol, and due to chemotherapeutic agents like doxorubicin and daunorubicin.
+\subsection{PROBLEM ANALYSIS}
+\label{subsec:PROBLEM ANALYSIS}
 
-Doxorubicin is anthracycline antibiotic having antitumor activity. It is an effective and
-frequently used chemotherapeutic agent for various malignancies. The major adverse effect is
-cardiotoxicity, which limits its use and reduces its therapeutic index. Doxorubicin
-cardiomyopathy, once developed, carries a poor prognosis and is frequently fatal. Possible
-cardiovascular damage by anthracyclines include congestive heart failure, left ventricular
-dysfunction, acute myocarditis and arrhythmia. At the cellular level, it causes morphological
-alterations in nucleus, mitochondria, and structural fibrous proteins. Various biochemical
-alterations like DNA damage, ATP block, apoptotic protein release and ROS generation also
-occur.
-
-Doxorubicin-induced cardiomyopathy is strongly linked to an increase in cardiac oxidative
-stress, as evidenced by reactive oxygen species (ROS) induced damage such as lipid
-peroxidation, along with reduced levels of antioxidants and sulfhydryl groups. Myofibrillar
-deterioration and intracellular calcium dysregulation are also important mechanisms commonly
-associated with doxorubicin-induced cardio toxicity.
-
-Although extensive research has been done to find effective treatment of doxorubicin
-cardiomyopathy, no such treatment has been discovered. Hence the effect of Dashamoolam
-Kashaya and its kalpana bhedas mentioned in Hridroga chikitsa of Chikitsa manjari is being
-explored for its potential role as a drug of choice in the treatment of dilated cardiomyopathy and for its cardioprotective action.
-
-\subsubsection{Rationale}
-\label{subsubsec:RATIONALE}
-
-The Dasamoola gana contains various phytochemicals such as alkaloids, tannins, saponins,
-flavonoids and quinones, total phenolic content (567 mg gallic acid equivalent/100 g) and
-exhibits antioxidant (44.86\%) and anti-inflammatory activities (32.56\%), which are contributed by its herbal ingredients, especially Aegle marmelos and Gmelia arborea. The highest antioxidant activity was shown by A. marmelos , which is followed by S. indicum and Dasamula preparation. \cite{Mahadevan2016}
-
-Various bioactivities of phenolic compounds are responsible for their chemopreventive
-properties (e.g., antioxidant, anticarcinogenic, or antimutagenic and anti-inflammatory
-effects). \cite{Mahadevan2016}
-
-Thus previous research articles on various individual drug constituents of the poly herbal
-formulation clearly suggests proven antioxidant, anti inflammatory, antiplatelet, cardiac
-stimulant and cardioprotective actions.\cite{Malviya2012,Kurian2009,Pathala2015,Chhatre2014}
-
-Antioxidant are man made or natural substances that may prevent or delay some type of cell
-damages, by terminating the chain reaction by removing free radical intermediates. Plants and
-animals maintain complex system of multiple type of antioxidant; the natural plant based
-antioxidants are playing an important role in the maintenance of human health for the past three decades. The best known are tocopherols, flavonoids,vitamin C and other phenolic compounds. Since one of the proposed principal mechanisms of doxorubicin cardiotoxicity are increased oxidative stress, an antioxidant rich poly herbal formulation becomes primary focus.
-
-Dashamoola has proven antioxidants and free radicle scavengers. With its established anti
-inflammatory activity , it may also prove to be effective in certain acquired forms of dilated
-cardiomyopathy arising secondary to infections. Dilated cardiomyopathy can lead to blood clots
-or chest pain wherein the analgesic and antiplatelet activity of dashamoola can have utility.
-Thus the formulation has been selected in view of its potent effects to counteract the alterations occuring in the micro environment of the cell.
-
-\subsubsection{Ayurvedic perspective}
-\label{subsubsec:Ayurvedic perspective}
-
-Dashamoola has a wide spectrum of biological activity. The morphological alterations at the
-cellular level may be understood as Vatika through the perspective of tridosha. Hridaya being
-one among the trimarma, excessive theekshna and ushna prayogas cannot be administered
-continuously. Hence a combination like Dashamoola and its kalpana bheda is being studied.
-
-\subsubsection{Role of invitro cell line study}
-\label{subsubsec:Role of invitro cell line study}
-
-The invitro evaluation of the cardioprotective action of Dashamoola in doxorubicin
-induced cardiomyopathy will permit an enormous level of simplification of the system under
-study, so that the investigator can focus on a small number of components as the extra ordinary
-complexity of living organisms is a great barrier for the exploration of their basic biological
-function.
-
-Main strategy of minimizing cardiotoxicity is early detection of high risk patients and
-prompt prophylactic treatment for which biochemical markers are now being closely scrutinized.
-Hence the assessment of product performance through direct action on cardiomyoblasts can
-prove to be a valuable tool in assessing the product performance more precisely.
+Problem analysis is the process of understanding the actual problems, user needs and proposing solutions to meet those needs. The goal of problem analysis is to gain a better understanding of the problem being solved before development begins. It is the process of gathering and interpreting facts, diagnosing problems and using the information to recommend improvements on the system. Problem analysis is problem solving activities that require intensive communication between users and the system developers. A problem can be defined as the difference between things as perceived and things as desired. The system is studied and analyzed. The system is viewed as a whole and the input to the system are identified. The output from the system is given to various processes.
 
 \subsection{Scope of study}
 \label{subsec:scope}
