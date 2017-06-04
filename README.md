@@ -16,7 +16,7 @@ miniProject.tex
 
 ### Contribution guidelines ###
 
-The author is Rajes R Nair
+The author is Rajesh R Nair
 
 ### Who do I talk to? ###
 
@@ -26,6 +26,11 @@ The rights of the document lies solely with the author.
 
 Use pdflatex to compile the document as:
 
-pdflatex miniProject.tex
+pdflatex miniProject.tex && pdflatex miniProject.tex
 
-in the terminal
+in the terminal.
+
+To compile the file with references use the command
+
+pdflatex miniProject.tex && bibtex miniProject.aux && pdflatex miniProject.tex && pdflatex miniProject.tex
+
