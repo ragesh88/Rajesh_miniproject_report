@@ -26,10 +26,10 @@ The rights of the document lies solely with the author.
 
 Use pdflatex to compile the document as:
 
-pdflatex miniProject.tex && pdflatex miniProject.tex
+xelatex miniProject.tex && xelatex miniProject.tex
 
 in the terminal.
 
 To compile the file with references use the command
 
-pdflatex miniProject.tex && bibtex miniProject.aux && pdflatex miniProject.tex && pdflatex miniProject.tex
+xelatex miniProject.tex && bibtex miniProject.aux && xelatex miniProject.tex && xelatex miniProject.tex

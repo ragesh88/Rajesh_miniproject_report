@@ -1,7 +1,10 @@
-\documentclass[11pt]{report} % use larger type; default would be 10pt
+\documentclass[12pt]{report} % use larger type; default would be 10pt
 
-\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+%\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
 
+% setting Times New Roman
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
@@ -146,18 +149,18 @@
 		\begin{minipage}{\linewidth}
 			\centering
 			%Thesis Title
-			\vspace{2cm}
+			\vspace{0.5cm}
 			{\Huge \bf{Voice Command Browsing (Extension for Google Chrome  Browser)}\par}
-			\vspace{1cm}
+			\vspace{0.5cm}
 			%Report type		
 			{\Large \bfseries{MINI PROJECT REPORT}\par}
-			\vspace{0.5cm}
+			\vspace{0.25cm}
 			{\Large \emph{Submitted in partial fulfillment of the requirements for the award of degree}\par}
-			\vspace{0.5cm}
+			\vspace{0.25cm}
 			{\Large \bf{BACHELOR OF TECHNOLOGY} \par}
-			\vspace{0.5cm}
+			\vspace{0.25cm}
 			{\Large \bf{BY} \par}
-			\vspace{1cm}
+			\vspace{0.5cm}
 			%Author's name
 			{\Large \bf{RAJESH R NAIR}\hspace{3cm}     Reg.no:14015695 \par}
 			{\Large \bf{UNNIKRISHNAN}\hspace{3cm}      Reg.no:14015716 \par}
@@ -210,11 +213,11 @@
 			\begin{flushleft}
 				submitted in partial fulfilment of the requirement for the award of the degree of Bachelor of Technology, is a bonafide work carried under supervision, during the academic year 2015-2016.
 			\end{flushleft}
-		    \vspace{2cm}
+		    \vspace{1cm}
 			{ \bf{Ms. DEEPA SREE VARMA}\hspace{3.5cm}     Prof. VINOD P \par}
 			{ \bf{PROJECT GUIDE}\hspace{3cm}      HEAD OF DEPARTMENT\par}
 			
-			\vspace{3cm}
+			\vspace{2cm}
 			
 			{ \bf{INTERNAL EXAMINER}\hspace{3cm}     EXTERNAL EXAMINER \par}
 			
@@ -472,17 +475,7 @@ As of February 2017, StatCounter estimates that Google Chrome has a 62\% worldwi
 The main objective of our project is to design a wheelchair that will be controlled wirelessly and will be very easy to operate it with no physical efforts.Implementation is the stage of the project when the theoretical design is turned out into a working system. Thus it can be considered to be the most critical stage in achieving a successful new system and in giving the user, confidence that the new system will work and be effective.
 The implementation stage involves careful planning, investigation of the existing system and it's constraints on implementation, designing of methods to achieve changeover and evaluation of changeover methods.
 
-\subsection{SOURCE CODE}
-\label{subsec:SOURCE CODE}
-\subsubsection{Javascript code}
-\label{subsubsec:Javascript code}
-\lstinputlisting{code/tab.js}
-\subsubsection{Json code}
-\label{subsubsec:Json code}
-\lstinputlisting[language=json]{code/manifest.json}
-\subsubsection{HTML code}
-\label{subsubsec:HTML code}
-\lstinputlisting[language=HTML]{code/jj.html}
+
 
 
 \chapter{TESTING}
@@ -616,21 +609,38 @@ The functioning of scouts are made simpler. They are made aware of potential pro
 A vocal command based extension which can be used to perform the basic and a few intermediate functions that are otherwise done in the browser using the keyboard or mouse.
 Users will be free to leave their keyboards and mouses and can depend on just their own voices to perform most browser related operations such as opening a new tab, closing tabs, searching the web etc. 
 
+
+\nocite{HTTPWikipedia}
+\nocite{javahttpsessionStackoverflow}
+\bibliographystyle{unsrt}
+\bibliography{reference}
+
 \chapter{APPENDIX}
 
+\section{SOURCE CODE}
+\label{sec:SOURCE CODE}
+\subsection{Javascript code}
+\label{subsec:Javascript code}
+\lstinputlisting{code/tab.js}
+\subsection{Json code}
+\label{subsec:Json code}
+\lstinputlisting[language=json]{code/manifest.json}
+\subsection{HTML code}
+\label{subsec:HTML code}
+\lstinputlisting[language=HTML]{code/jj.html}
 
 \section{SCREEN SHOTS} 
 \label{App:SCREEN SHOTS}
 
-\begin{figure}[ht]
+
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{figures/screen1.jpg}
 	\caption{Screen short 1}
 	\label{fig:Screen short 1}
 \end{figure}
 
-
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{figures/screen2.jpg}
 	\caption{Screen short 2}
@@ -638,31 +648,25 @@ Users will be free to leave their keyboards and mouses and can depend on just th
 \end{figure}
 
 
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{figures/screen3.jpg}
 	\caption{Screen short 3}
 	\label{fig:Screen short 3}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{figures/screen4.jpg}
 	\caption{Screen short 4}
 	\label{fig:Screen short 4}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{figures/screen5.jpg}
 	\caption{Screen short 5}
 	\label{fig:Screen short 5}
 \end{figure}
-
-
-\nocite{HTTPWikipedia}
-\nocite{javahttpsessionStackoverflow}
-\bibliographystyle{unsrt}
-\bibliography{reference}
 
 \end{document}
