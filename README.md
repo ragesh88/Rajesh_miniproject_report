@@ -24,7 +24,7 @@ The rights of the document lies solely with the author.
 
 ### How to compile 
 
-Use pdflatex to compile the document as:
+Use xelatex to compile the document as:
 
 xelatex miniProject.tex && xelatex miniProject.tex
 
